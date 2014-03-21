@@ -1,3 +1,10 @@
 language: ruby
 rvm:
-  - 2.0.0
+- 2.0.0
+deploy:
+  provider: heroku
+  api_key:
+    secure: bmn40znJz0A7YRl2F43H/KcARRkSlJ5DcsNHXXm7Mim0XHohHisjRdXUlOSQ5mF1cNPf1Lu+5ri/6KzV9Q1VejL9Gd8zGlCd7cDWuUVqNIlDseDYJAQODVozt8+ok1rP93a8Xfs5PFmzQbXVU3EBDUbUTi3BZDxMl831OuZOgAU=
+  app: bfh-os2-toolchain
+  on:
+    repo: MatthiasWinzeler/bfh-os2-toolchain
