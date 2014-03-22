@@ -1,0 +1,97 @@
+## github
+# create github acc, setup new repo
+
+# clone this repo and switch to it
+git clone https://github.com/MatthiasWinzeler/bfh-os2-toolchain.git
+cd bfh-os2-toolchain/
+
+## install rvm ruby 2 and rails 4
+# rvm:
+\curl -sSL https://get.rvm.io | bash -s stable
+
+# ruby
+. ~/.rvm/scripts/rvm
+rvm install ruby-2.0
+
+# rails
+gem install rails
+rails -v
+
+## setup rails project
+rails new .
+
+rake db:migrate
+
+rails generate controller welcome index
+
+rake
+
+rails server
+
+git add .
+git commit
+git push origin master
+
+=> should show up on github
+
+## add travis CI (according to http://docs.travis-ci.com/user/getting-started/ and 
+# Step one: Sign in with github account on travis-ci.org, sync repo, turn switch
+
+# create .travis.yml
+
+vi .travis.yml
+language: ruby
+rvm:
+- 2.0.0
+
+git add .travis.yml
+git commit
+git push origin master
+
+=> build should be triggered and successful
+
+## sign in on heroku, create new application, add postgresql add-on
+
+## add heroku deployment (http://blog.travis-ci.com/2013-07-09-introducing-continuous-deployment-to-heroku/)
+# install travis ci client
+gem install travis -v 1.6.8 --no-rdoc --no-ri
+
+# setup heroku as deployment target to .travis.yml
+travis setup heroku
+# TODO: where does this the heroku stuff take from (only github acc is needed, no heroku api key? from heroku toolbelt)
+
+# .travis.yml should now look like this
+api_key:
+    secure: bmn40znJz0A7YRl2F43H/KcARRkSlJ5DcsNHXXm7Mim0XHohHisjRdXUlOSQ5mF1cNPf1Lu+5ri/6KzV9Q1VejL9Gd8zGlCd7cDWuUVqNIlDseDYJAQODVozt8+ok1rP93a8Xfs5PFmzQbXVU3EBDUbUTi3BZDxMl831OuZOgAU=
+  app: bfh-os2-toolchain
+  on:
+    repo: MatthiasWinzeler/bfh-os2-toolchain
+
+# heroku specific rails stuff
+vi Gemfile
+...
+# Use sqlite3 as the database for Active Record (dev & test)
+gem 'sqlite3', group: [:development, :test]
+
+# use postgres (heroku) on prod
+gem 'pg', group: :production
+gem 'rails_12factor', group: :production
+...
+ruby '2.0.0'
+
+vi config/database.yml
+...
+production:
+  adapter: postgresql
+  pool: 5
+  timeout: 5000
+
+# migrate after deployment:
+vi .travis.yml
+  ...
+  run: "rake db:migrate"
+
+bundle install
+
+git commit Gemfile* config/database.yml .travis.yml
+git push origin master
