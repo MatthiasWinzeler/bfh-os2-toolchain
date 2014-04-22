@@ -10,6 +10,12 @@ gem 'sqlite3', group: [:development, :test]
 gem 'pg', group: :production
 gem 'rails_12factor', group: :production
 
+# Ember.js
+gem 'ember-rails'
+
+# Process manager
+gem 'foreman'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
 
@@ -47,4 +53,5 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-ruby "2.0.0"
+#ruby "2.0.0"
+ruby "1.9.3"
