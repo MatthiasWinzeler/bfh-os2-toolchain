@@ -10,6 +10,12 @@ gem 'sqlite3', group: [:development, :test]
 gem 'pg', group: :production
 gem 'rails_12factor', group: :production
 
+# Ember.js
+gem 'ember-rails'
+
+# Process manager
+gem 'foreman'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
 
