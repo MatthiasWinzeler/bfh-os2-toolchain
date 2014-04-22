@@ -9,3 +9,4 @@ deploy:
   on:
     repo: MatthiasWinzeler/bfh-os2-toolchain
   run: "rake db:migrate"
+  run: "rake db:seed"
