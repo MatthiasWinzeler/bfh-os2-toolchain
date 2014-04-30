@@ -1,0 +1,34 @@
+!!!
+%html(lang="en-US")
+  %head
+    %title BfhOs2Toolchain
+    = stylesheet_link_tag "application"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+  %body
+    %nav.navbar.navbar-inverse.navbar-fixed-top{role: "navigation"}
+      .container
+        .navbar-header
+          %button.navbar-toggle{"data-target" => ".navbar-ex1-collapse", "data-toggle" => "collapse", type: "button"}
+            %span.sr-only Toggle navigation
+            %span.icon-bar
+            %span.icon-bar
+              %span.icon-bar
+          = link_to "BfhOs2Toolchain", "/", :class => "navbar-brand"
+
+        .collapse.navbar-collapse.navbar-ex1-collapse
+          %ul.nav.navbar-nav.navbar-right
+            %li= link_to "Home", "/"
+            %li.dropdown
+              = link_to "#", :data => {:toggle => "dropdown"}, :class => "dropdown-toggle" do
+                Posts
+                %b.caret
+              %ul.dropdown-menu
+                %li= link_to "Show", "#/posts"
+        //.navbar-collapse
+      //.container
+
+    #wrapper
+      #container
+        #content
+          = yield

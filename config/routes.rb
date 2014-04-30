@@ -4,6 +4,6 @@ BfhOs2Toolchain::Application.routes.draw do
       resources :posts
     end
   end
-  
+
   root "ember#start"
 end
