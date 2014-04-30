@@ -1,0 +1,18 @@
+<h1>Post details</h1>
+
+<div class="row">
+  <div class="col-md-4">
+    <div class="panel panel-default">
+      <div class="panel-heading">{{title}}</div>
+      <div class="panel-body">
+        {{body}}
+      </div>
+    </div>
+    {{#link-to "posts"}}
+      <button type="button" class="btn btn-primary">Back</button>
+    {{/link-to}}
+    {{#link-to "posts"}}
+      <button type="button" class="btn btn-danger" {{action 'delete' this}}>Delete</button>
+    {{/link-to}}
+  </div>
+</div>

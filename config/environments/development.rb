@@ -26,4 +26,7 @@ BfhOs2Toolchain::Application.configure do
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
   config.assets.debug = true
+  
+  # Tell ember which mode to use
+  config.ember.variant = :development
 end

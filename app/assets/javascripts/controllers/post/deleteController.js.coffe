@@ -1,0 +1,2 @@
+BfhOs2Toolchain.PostDeleteController = Ember.ObjectController.extend
+  isEditing: false
