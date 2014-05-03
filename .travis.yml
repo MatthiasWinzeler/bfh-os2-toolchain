@@ -4,7 +4,7 @@ rvm:
 deploy:
   provider: heroku
   api_key:
-    secure: bmn40znJz0A7YRl2F43H/KcARRkSlJ5DcsNHXXm7Mim0XHohHisjRdXUlOSQ5mF1cNPf1Lu+5ri/6KzV9Q1VejL9Gd8zGlCd7cDWuUVqNIlDseDYJAQODVozt8+ok1rP93a8Xfs5PFmzQbXVU3EBDUbUTi3BZDxMl831OuZOgAU=
+    secure: WYUhMSIxYEUK5BJSZ+8iO2ovi2KiE2Uqcqmiu1R8+RUlInxoDbPrMsKje34Zq+v5/rhPlf8qsr4QJwM22dvqfJcFj9+FAroPtFdnL8aQiO0t7frNdOPJY8wbHM8rlX1RlJRh0XHOr3MNP9vNznzIZ1GogNZNImlzu2EZ8p4DpGc=
   app: bfh-os2-toolchain
   on:
     repo: MatthiasWinzeler/bfh-os2-toolchain
