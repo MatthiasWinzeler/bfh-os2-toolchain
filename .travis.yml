@@ -1,6 +1,8 @@
 language: ruby
 rvm:
-- 2.0.0
+  - 2.0.0
+gemfile: data/Gemfile
+script: sh -c 'cd data && bundle exec rake'
 deploy:
   provider: heroku
   api_key:
@@ -8,4 +10,4 @@ deploy:
   app: bfh-os2-toolchain
   on:
     repo: MatthiasWinzeler/bfh-os2-toolchain
-  run: "sh -c 'cd data' && rake db:migrate"
+  run: rake db:migrate
