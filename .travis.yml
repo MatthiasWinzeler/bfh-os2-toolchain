@@ -8,4 +8,4 @@ deploy:
   app: bfh-os2-toolchain
   on:
     repo: MatthiasWinzeler/bfh-os2-toolchain
-  run: "rake db:migrate"
+  run: "sh -c 'cd data' && rake db:migrate"
