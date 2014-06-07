@@ -2,7 +2,7 @@ language: ruby
 rvm:
   - 2.0.0
 gemfile: data/Gemfile
-script: sh -c 'cd data && && bundle exec rake db:migrate && bundle exec rake'
+script: sh -c 'cd data && bundle exec rake db:migrate && bundle exec rake'
 deploy:
   provider: heroku
   api_key:
