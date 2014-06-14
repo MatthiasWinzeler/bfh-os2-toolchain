@@ -1,2 +1,14 @@
 BfhOs2Toolchain.PostDeleteController = Ember.ObjectController.extend
   isEditing: false
+  headerTitle: 'Delete'
+  buttonTitle: 'Delete'
+
+  actions:
+      save: ->
+      @content.deleteRecord()
+      @transitionToRoute('posts')
+    cancel: ->
+    	@transitionToRoute('post', @content)
+
+
+  
